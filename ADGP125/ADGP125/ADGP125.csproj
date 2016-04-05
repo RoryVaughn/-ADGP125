@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Combat.cs" />
     <Compile Include="FSM.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="Form1.cs">

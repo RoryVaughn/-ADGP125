@@ -11,3 +11,6 @@ C:\Users\Rory.Vaughn\Desktop\Homework-2nd\ADGP125\ADGP125\ADGP125\obj\Debug\ADGP
 C:\Users\Rory.Vaughn\Desktop\ADGP125\ADGP125\ADGP125\bin\Debug\ADGP125.exe.config
 C:\Users\Rory.Vaughn\Desktop\ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.exe
 C:\Users\Rory.Vaughn\Desktop\ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.pdb
+C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\bin\Debug\ADGP125.exe.config
+C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.exe
+C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.pdb
