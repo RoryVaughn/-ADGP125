@@ -2,13 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
-/*
-    Generic Finite State Machine that can be used with just about anything that need to transition between 
-    a finite amount of states
-*/
+
 public class FSM<T>
 {
-    List<T> States;  //List of states an object can be and and can be changed for user prefrence
+    List<T> States;  
 
     List<string> TransitionsList = new List<string>(); //list of all possible state transitions for a certain object
 
@@ -21,17 +18,17 @@ public class FSM<T>
 
     public void AddState(T state)
     {
-        //Adds states to the list of states for each object
+        
         States.Add(state);
     }
     public void AddTransition(T From, T To)
     {
-        //
+        
         string name = From.ToString() + ">" + To.ToString();
 
         if (!TransitionsList.Contains(name))
         {
-            //Debug.Log("adding transition " + name);
+            
             TransitionsList.Add(name);
         }
     }
@@ -51,20 +48,18 @@ public class FSM<T>
 
     public bool Transition(T from, T to)
     {
-        //If the transition is a valid one it sets the current state of the object to the transition
-        //it was trying to transition too
-        //If it wasn't the state of the object doesnt change
-        //Debug.Log("making transition from " + from.ToString() + " to " + to.ToString());
+       
+  
         if (checkTransition(from, to))
         {
-            //Debug.Log("valid transition from " + from.ToString() + " to " + to.ToString());
+            
             cState = to;
             Console.WriteLine("New State " + cState.ToString());
             return true;
         }
         else
         {
-            //Debug.Log("INVALID TRANSITION NOT CHANGING STATE :: from " + from.ToString() + " to " + to.ToString());
+            
             return false;
         }
     }
@@ -73,7 +68,7 @@ public class FSM<T>
 
 
 
-    public T state //gets the cState of the object with out modifying it out side of the FSM
+    public T state 
     {
         get
         {

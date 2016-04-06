@@ -65,14 +65,12 @@
             this.textBox31 = new System.Windows.Forms.TextBox();
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.Attack12 = new System.Windows.Forms.Button();
-            this.Block12 = new System.Windows.Forms.Button();
             this.Spec12 = new System.Windows.Forms.Button();
             this.Spec22 = new System.Windows.Forms.Button();
             this.Attack22 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Attack21 = new System.Windows.Forms.Button();
             this.Spec21 = new System.Windows.Forms.Button();
-            this.Block21 = new System.Windows.Forms.Button();
             this.Attack11 = new System.Windows.Forms.Button();
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
@@ -390,15 +388,6 @@
             this.Attack12.UseVisualStyleBackColor = true;
             this.Attack12.Click += new System.EventHandler(this.Attack12_Click);
             // 
-            // Block12
-            // 
-            this.Block12.Location = new System.Drawing.Point(130, 200);
-            this.Block12.Name = "Block12";
-            this.Block12.Size = new System.Drawing.Size(146, 42);
-            this.Block12.TabIndex = 44;
-            this.Block12.Text = "Block";
-            this.Block12.UseVisualStyleBackColor = true;
-            // 
             // Spec12
             // 
             this.Spec12.Location = new System.Drawing.Point(206, 142);
@@ -459,15 +448,6 @@
             this.Spec21.UseVisualStyleBackColor = true;
             this.Spec21.Click += new System.EventHandler(this.Spec21_Click);
             // 
-            // Block21
-            // 
-            this.Block21.Location = new System.Drawing.Point(130, 440);
-            this.Block21.Name = "Block21";
-            this.Block21.Size = new System.Drawing.Size(153, 42);
-            this.Block21.TabIndex = 49;
-            this.Block21.Text = "Block";
-            this.Block21.UseVisualStyleBackColor = true;
-            // 
             // Attack11
             // 
             this.Attack11.Location = new System.Drawing.Point(130, 95);
@@ -521,12 +501,10 @@
             this.Controls.Add(this.textBox34);
             this.Controls.Add(this.textBox33);
             this.Controls.Add(this.Attack11);
-            this.Controls.Add(this.Block21);
             this.Controls.Add(this.Spec21);
             this.Controls.Add(this.Attack21);
             this.Controls.Add(this.Attack22);
             this.Controls.Add(this.Spec22);
-            this.Controls.Add(this.Block12);
             this.Controls.Add(this.Spec12);
             this.Controls.Add(this.Attack12);
             this.Controls.Add(this.textBox32);
@@ -612,14 +590,12 @@
         private System.Windows.Forms.TextBox textBox31;
         private System.Windows.Forms.TextBox textBox32;
         private System.Windows.Forms.Button Attack12;
-        private System.Windows.Forms.Button Block12;
         private System.Windows.Forms.Button Spec12;
         private System.Windows.Forms.Button Spec22;
         private System.Windows.Forms.Button Attack22;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Attack21;
         private System.Windows.Forms.Button Spec21;
-        private System.Windows.Forms.Button Block21;
         private System.Windows.Forms.Button Attack11;
         private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.TextBox textBox34;

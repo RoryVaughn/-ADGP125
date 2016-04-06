@@ -30,10 +30,10 @@ namespace ADGP125
         {
             InitializeComponent();
 
-            Team1 = new Team.Fighter("Team1", 500, 500, 100, 100, 0, 1, 1, 1, 1);
-            Team2 = new Team.Fighter("Team2", 500, 500, 100, 100, 0, 1, 1, 1, 1);
-            Team3 = new Team.Fighter("Team3", 500, 500, 100, 100, 0, 1, 1, 1, 1);
-            Team4 = new Team.Fighter("Team4", 500, 500, 100, 100, 0, 1, 1, 1, 1);
+            Team1 = new Team.Fighter("Team1", 500, 100, 100, 100, 0, 1, 1, 1, 1);
+            Team2 = new Team.Fighter("Team2", 500, 100, 100, 100, 0, 1, 1, 1, 1);
+            Team3 = new Team.Fighter("Team3", 500, 100, 100, 100, 0, 1, 1, 1, 1);
+            Team4 = new Team.Fighter("Team4", 500, 100, 100, 100, 0, 1, 1, 1, 1);
 
 
             ///////////////////////////////
