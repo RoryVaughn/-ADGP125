@@ -9,14 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ADGP125;
 
-public enum State
-{
-    INIT,
-    ATTACK,
-    E_ATTACK,
-    END
-
-}
 
 namespace ADGP125
 {
@@ -126,6 +118,24 @@ namespace ADGP125
             textBox27.Text = "Attack: " + Team4.att;
             textBox26.Text = "Defence: " + Team4.def;
             //////////////////////////////////////////
+            if (Team1.exp > 0)
+            {
+                Team1.lvl = (Team1.exp * Team1.exp);
+            }
+            if (Team2.exp > 0)
+            {
+                Team2.lvl = (Team2.exp * Team2.exp);
+            }
+            if (Team3.exp > 0)
+            {
+                Team3.lvl = (Team3.exp * Team3.exp);
+            }
+            if (Team4.exp > 0)
+            {
+                Team4.lvl = (Team4.exp * Team4.exp);
+            }
+
+
         }
         private void button1_Click(object sender, EventArgs e)
         {

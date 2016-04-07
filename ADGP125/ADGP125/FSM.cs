@@ -67,7 +67,7 @@ public class FSM<T>
     private T cState; //current state
 
 
-
+    //implement the current state.
     public T state 
     {
         get

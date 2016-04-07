@@ -26,26 +26,24 @@ namespace ADGP125
             public int health; //current Health
             public int Max_mana; //Maximum amount of mana that this unit can have.
             public int mana; //current mana
-            public float exp; //current experience
-            public int lvl; //current overall level
+            public double exp; //current experience
+            public double lvl; //current overall level
             public int Str; //amount of possible damage
             public int att; //possiblity of hitting the target
             public int def; //damage mitigation
-            float x = 10;
+           
             public void Auto(Fighter defender)
             {
                 //figure out how to decrease another SPECIFIC units health by strength.
                 if (health > 0)
                 {
-                    if (exp == x)
-                    {
-                        x = (x * 1.5f);
-                    }
+                   
                     defender.health -= (Str * 10);
+
                     if (defender.health <= 0)
                     {
-                        exp =+ 10;
-                        defender.health = 100;
+                        exp = exp + 10;
+                        
                     };
                 }
             }
@@ -60,20 +58,18 @@ namespace ADGP125
                         mana -= 10;
 
                         defender.health -= (Str * 25);
-                    }
-                    if (exp == x)
-                    {
 
-                        x = (x * 1.5f);
+                        if (defender.health <= 0)
+                        {
+                            exp = exp + 10;
+
+
+
+                        };
                     }
+                   
                     
-                    if (defender.health <= 0)
-                    {
-                        exp = +10;
-
-                        defender.health = 100;
-                        defender.lvl = 2;
-                    };
+                    
                 }
             }
 
