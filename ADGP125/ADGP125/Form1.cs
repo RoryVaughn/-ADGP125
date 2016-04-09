@@ -143,7 +143,7 @@ namespace ADGP125
         {
 
 
-            return Convert.ToInt32(Math.Sqrt(exp));
+            return Convert.ToInt32(Math.Sqrt(Math.Sqrt(exp)));
 
 
 
