@@ -20,3 +20,12 @@ C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.csprojRe
 C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.Form1.resources
 C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.Properties.Resources.resources
 C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.csproj.GenerateResource.Cache
+C:\Users\1806\Desktop\-ADGP125\ADGP125\ADGP125\bin\Debug\ADGP125.exe.config
+C:\Users\1806\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.exe
+C:\Users\1806\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.pdb
+C:\Users\1806\Desktop\-ADGP125\ADGP125\ADGP125\bin\Debug\ADGP125.exe
+C:\Users\1806\Desktop\-ADGP125\ADGP125\ADGP125\bin\Debug\ADGP125.pdb
+C:\Users\1806\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.csprojResolveAssemblyReference.cache
+C:\Users\1806\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.Form1.resources
+C:\Users\1806\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.Properties.Resources.resources
+C:\Users\1806\Desktop\-ADGP125\ADGP125\ADGP125\obj\Debug\ADGP125.csproj.GenerateResource.Cache

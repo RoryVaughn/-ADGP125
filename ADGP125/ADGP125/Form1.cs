@@ -120,23 +120,35 @@ namespace ADGP125
             //////////////////////////////////////////
             if (Team1.exp > 0)
             {
-                Team1.lvl = (Team1.exp * Team1.exp);
+                Team1.lvl = Sq(Team1.exp);
             }
             if (Team2.exp > 0)
             {
-                Team2.lvl = (Team2.exp * Team2.exp);
+                Team2.lvl = Sq(Team2.exp);
             }
             if (Team3.exp > 0)
             {
-                Team3.lvl = (Team3.exp * Team3.exp);
+                Team3.lvl = Sq(Team3.exp);
             }
             if (Team4.exp > 0)
             {
-                Team4.lvl = (Team4.exp * Team4.exp);
+                Team4.lvl = Sq(Team4.exp);
             }
 
 
         }
+
+       
+        private double Sq(double exp)
+        {
+
+
+            return Convert.ToInt32(Math.Sqrt(exp));
+
+
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             
