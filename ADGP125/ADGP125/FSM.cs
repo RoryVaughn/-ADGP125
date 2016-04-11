@@ -5,7 +5,9 @@ using System.Collections.Generic;
 
 public class FSM<T>
 {
-    List<T> States;  
+
+    
+    List<T> States;
 
     List<string> TransitionsList = new List<string>(); //list of all possible state transitions for a certain object
 
@@ -66,11 +68,11 @@ public class FSM<T>
 
     private T cState; //current state
 
-
+    
     //implement the current state.
     public T state 
     {
-        get
+        get 
         {
             return cState;
         }

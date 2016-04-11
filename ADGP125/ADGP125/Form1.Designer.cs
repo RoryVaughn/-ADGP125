@@ -76,6 +76,9 @@
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox37 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -237,12 +240,13 @@
             // 
             // Spec11
             // 
+            this.Spec11.BackColor = System.Drawing.Color.Cyan;
             this.Spec11.Location = new System.Drawing.Point(130, 142);
             this.Spec11.Name = "Spec11";
             this.Spec11.Size = new System.Drawing.Size(70, 38);
             this.Spec11.TabIndex = 20;
             this.Spec11.Text = "Special Attack";
-            this.Spec11.UseVisualStyleBackColor = true;
+            this.Spec11.UseVisualStyleBackColor = false;
             this.Spec11.Click += new System.EventHandler(this.Spec11_Click);
             // 
             // textBox17
@@ -390,22 +394,24 @@
             // 
             // Spec12
             // 
+            this.Spec12.BackColor = System.Drawing.Color.Cyan;
             this.Spec12.Location = new System.Drawing.Point(206, 142);
             this.Spec12.Name = "Spec12";
             this.Spec12.Size = new System.Drawing.Size(70, 38);
             this.Spec12.TabIndex = 43;
             this.Spec12.Text = "Special Attack";
-            this.Spec12.UseVisualStyleBackColor = true;
+            this.Spec12.UseVisualStyleBackColor = false;
             this.Spec12.Click += new System.EventHandler(this.Spec12_Click);
             // 
             // Spec22
             // 
+            this.Spec22.BackColor = System.Drawing.Color.DarkOrchid;
             this.Spec22.Location = new System.Drawing.Point(214, 384);
             this.Spec22.Name = "Spec22";
             this.Spec22.Size = new System.Drawing.Size(70, 38);
             this.Spec22.TabIndex = 45;
             this.Spec22.Text = "Special Attack";
-            this.Spec22.UseVisualStyleBackColor = true;
+            this.Spec22.UseVisualStyleBackColor = false;
             this.Spec22.Click += new System.EventHandler(this.button13_Click);
             // 
             // Attack22
@@ -427,6 +433,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Attack21
             // 
@@ -440,22 +447,24 @@
             // 
             // Spec21
             // 
+            this.Spec21.BackColor = System.Drawing.Color.DarkOrchid;
             this.Spec21.Location = new System.Drawing.Point(130, 384);
             this.Spec21.Name = "Spec21";
             this.Spec21.Size = new System.Drawing.Size(70, 38);
             this.Spec21.TabIndex = 48;
             this.Spec21.Text = "Special Attack";
-            this.Spec21.UseVisualStyleBackColor = true;
+            this.Spec21.UseVisualStyleBackColor = false;
             this.Spec21.Click += new System.EventHandler(this.Spec21_Click);
             // 
             // Attack11
             // 
+            this.Attack11.BackColor = System.Drawing.Color.LightGray;
             this.Attack11.Location = new System.Drawing.Point(130, 95);
             this.Attack11.Name = "Attack11";
             this.Attack11.Size = new System.Drawing.Size(70, 34);
             this.Attack11.TabIndex = 50;
             this.Attack11.Text = "Attack";
-            this.Attack11.UseVisualStyleBackColor = true;
+            this.Attack11.UseVisualStyleBackColor = false;
             this.Attack11.Click += new System.EventHandler(this.Attack11_Click);
             // 
             // textBox33
@@ -491,11 +500,45 @@
             this.textBox36.Size = new System.Drawing.Size(70, 20);
             this.textBox36.TabIndex = 54;
             // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Location = new System.Drawing.Point(361, 541);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 55;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(462, 541);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 56;
+            this.button3.Text = "Load";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBox37
+            // 
+            this.textBox37.Location = new System.Drawing.Point(361, 475);
+            this.textBox37.Multiline = true;
+            this.textBox37.Name = "textBox37";
+            this.textBox37.ReadOnly = true;
+            this.textBox37.Size = new System.Drawing.Size(190, 51);
+            this.textBox37.TabIndex = 57;
+            this.textBox37.TextChanged += new System.EventHandler(this.textBox37_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 615);
+            this.Controls.Add(this.textBox37);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox36);
             this.Controls.Add(this.textBox35);
             this.Controls.Add(this.textBox34);
@@ -601,6 +644,9 @@
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.TextBox textBox35;
         private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox37;
     }
 }
 

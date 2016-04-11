@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace ADGP125
 {
-    class Combat
+    
+    public sealed class Single
     {
-        enum COMBATSTATES
+
+    }
+    
+class Combat
+    {
+       
+
+    enum COMBATSTATES
         {
             init,
-            ActionSelect,
             Attack,
-            Check,
-            EnemyAtt,
+            GameOver,
+            YouWin,
+            
             count
         }
 
@@ -35,13 +43,9 @@ namespace ADGP125
                 }
             }
 
-            _fsm.AddTransition(COMBATSTATES.init, COMBATSTATES.ActionSelect);
-            _fsm.AddTransition(COMBATSTATES.ActionSelect, COMBATSTATES.Attack);
-            _fsm.AddTransition(COMBATSTATES.Attack, COMBATSTATES.Check);
-            _fsm.AddTransition(COMBATSTATES.Check, COMBATSTATES.EnemyAtt);
-            _fsm.AddTransition(COMBATSTATES.EnemyAtt, COMBATSTATES.Check);
-            _fsm.AddTransition(COMBATSTATES.Check, COMBATSTATES.Attack);
-           
+            _fsm.AddTransition(COMBATSTATES.init, COMBATSTATES.Attack);
+            _fsm.AddTransition(COMBATSTATES.Attack, COMBATSTATES.GameOver);
+            _fsm.AddTransition(COMBATSTATES.Attack, COMBATSTATES.YouWin);
         }
     }
 }

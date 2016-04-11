@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ADGP125;
@@ -12,8 +14,145 @@ using ADGP125;
 
 namespace ADGP125
 {
+
+  
     public partial class Form1 : Form
     {
+        Serial save = new Serial();
+        private Team teamsave;
+
+
+        [Serializable]
+        class Team
+        {
+           
+       
+            public Team()
+            {
+
+            }
+            public Team(string s_name, double s_health, int mana, double exp, double lvl, double Str, double att, double def, int firstdeath)
+            {
+                
+            }
+
+
+
+            
+
+            interface I_Abilites
+            {
+                void Auto(Fighter defender);
+                void Spec(Fighter defender);
+
+
+
+            }
+            
+            public class Fighter : I_Abilites
+            {
+                public string name; //The specific name stored for this specific object.
+                public int Max_health;//Maximum amount of mana that this unit can have.
+                public double health; //current Health
+                public int Max_mana; //Maximum amount of mana that this unit can have.
+                public int mana; //current mana
+                public double exp; //current experience
+                public double lvl; //current overall level
+                public double Str; //amount of possible damage
+                public double att; //possiblity of hitting the target
+                public double def; //damage mitigation
+                public int firstdeath = 0;
+
+
+
+                public void Auto(Fighter defender)
+                {
+
+                    if (health > 0)
+                    {
+
+                        defender.health -= (Str * 10);
+                        health -= (defender.Str * 5);
+                        if (defender.health <= 0)
+                        {
+                            defender.firstdeath++;
+                            health = health + (100 * lvl);
+
+                            if (defender.firstdeath <= 2)
+                            {
+                                defender.exp = defender.exp + 10;
+                            }
+                            if (defender.firstdeath > 2)
+                            {
+                                exp = defender.lvl + (exp + 10);
+
+                                defender.exp = lvl + (defender.exp + 10);
+                            }
+
+
+                        };
+                    }
+                }
+
+                public void Spec(Fighter defender)
+                {
+                    if (health > 0)
+                    {
+                        if (mana > 0)
+                        {
+                            health -= (defender.Str * 15);
+
+                            mana -= 10;
+
+                            defender.health -= (Str * 25);
+
+
+                            if (defender.health <= 0)
+                            {
+                                health = health + (100 * lvl);
+                                defender.firstdeath++;
+                                if (defender.firstdeath <= 2)
+                                {
+                                    defender.exp = defender.exp + 10;
+                                }
+                                if (defender.firstdeath > 2)
+                                {
+                                    exp = defender.lvl + (exp + 10);
+                                    defender.exp = lvl + (defender.exp + 10);
+                                }
+
+
+                            };
+                        }
+                    }
+
+
+
+
+                }
+
+
+
+
+
+                public Fighter(string F_Name, int F_Max_Health, int F_Health, int F_Max_Mana, int F_Mana, double F_Exp, int F_Level, double F_Str, double F_Att, double F_Def)
+
+                {
+                    name = F_Name; //The specific name stored for this specific object.
+                    Max_health = F_Max_Health;//Maximum amount of mana that this unit can have.
+                    health = F_Health; //current Health68
+                    Max_mana = F_Max_Mana; //Maximum amount of mana that this unit can have.
+                    mana = F_Mana; //current mana
+                    exp = F_Exp; //current experience
+                    lvl = F_Level; //current overall level
+                    Str = F_Str; //amount of possible damage
+                    att = F_Att; //possiblity of hitting the target
+                    def = F_Def;
+                }
+            }
+
+
+        }
         Team.Fighter Team1;
         Team.Fighter Team2;
         Team.Fighter Team3;
@@ -21,12 +160,12 @@ namespace ADGP125
         public Form1()
         {
             InitializeComponent();
-
-            Team1 = new Team.Fighter("Team1", 500, 100, 100, 100, 0, 1, 1, 1, 1);
-            Team2 = new Team.Fighter("Team2", 500, 100, 100, 100, 0, 1, 1, 1, 1);
-            Team3 = new Team.Fighter("Team3", 500, 100, 100, 100, 0, 1, 1, 1, 1);
-            Team4 = new Team.Fighter("Team4", 500, 100, 100, 100, 0, 1, 1, 1, 1);
-
+            double e_exp = 0; 
+            Team1 = new Team.Fighter("Team1", 500, 500, 100, 100, 0, 1, 1, 1, 1);
+            Team2 = new Team.Fighter("Team2", 500, 500, 100, 100, 0, 1, 1, 1, 1);
+            Team3 = new Team.Fighter("Team3", 500, 500, 100, 100, e_exp, 1, 1, 1, 1);
+            Team4 = new Team.Fighter("Team4", 500, 500, 100, 100, e_exp, 1, 1, 1, 1);
+        
 
             ///////////////////////////////
             //attacks
@@ -79,8 +218,108 @@ namespace ADGP125
 
         public void update()
         {
+            if (Team1.exp > 0)
+            {
+                Team1.lvl = Sq(Team1.exp);
+            }
+            if (Team2.exp > 0)
+            {
+                Team2.lvl = Sq(Team2.exp);
+            }
+            if (Team3.exp > 0)
+            {
+                Team3.lvl = Sq(Team3.exp);
+            }
+            if (Team4.exp > 0)
+            {
+                Team4.lvl = Sq(Team4.exp);
+            }
+
+            //////////////////////
+            if (Team1.exp > 1)
+            {
+                Team1.Str = sq1(Team1.exp);
+            }
+            if (Team2.lvl > 1)
+            {
+                Team2.Str = sq1(Team2.exp);
+            }
+            if (Team3.lvl > 1)
+            {
+                Team3.Str = sq1(Team3.exp);
+            }
+            if (Team4.lvl > 1)
+            {
+                Team4.Str = sq1(Team4.exp);
+            }
+            ///////////////////////////////
+            if (Team1.exp > 1)
+            {
+                Team1.def = sq1(Team1.exp);
+            }
+            if (Team2.lvl > 1)
+            {
+                Team2.def = sq1(Team2.exp);
+            }
+            if (Team3.lvl > 1)
+            {
+                Team3.def = sq1(Team3.exp);
+            }
+            if (Team4.lvl > 1)
+            {
+                Team4.def = sq1(Team4.exp);
+            }
+            ////////////////////////////
+
+            if (Team1.exp > 1)
+            {
+                Team1.att = sq1(Team1.exp);
+            }
+            if (Team2.lvl > 1)
+            {
+                Team2.att = sq1(Team2.exp);
+            }
+            if (Team3.lvl > 1)
+            {
+                Team3.att = sq1(Team3.exp);
+            }
+            if (Team4.lvl > 1)
+            {
+                Team4.att = sq1(Team4.exp);
+            }
+
             /////////////////////////////////
-            
+            int idk = 0;
+            if (Team1.health < 0)
+            {idk++;
+                Team1.health = 0;
+                textBox1.Text = "Dead";
+                textBox37.Text = "One player is Dead";
+                
+
+            }
+            if (Team2.health < 0)
+            {idk++;
+                Team2.health = 0;
+                textBox24.Text = "Dead";
+                textBox37.Text = "One player is Dead";
+                
+            }
+            if (idk == 2)
+            {
+                textBox37.Text = "Game over";
+            }
+            if (Team3.health < 0)
+            {
+                Team3.health = 100 + Team3.exp;
+            }
+            if (Team4.health < 0)
+            {
+                Team4.health = 100 + Team4.exp;
+            }
+
+
+            ///////////////////////////////
             textBox2.Text = "Level: " + Team1.lvl;
             textBox5.Text = "Exp: " + Team1.exp;
             textBox4.Text = "Health: " + Team1.health;
@@ -118,35 +357,21 @@ namespace ADGP125
             textBox27.Text = "Attack: " + Team4.att;
             textBox26.Text = "Defence: " + Team4.def;
             //////////////////////////////////////////
-            if (Team1.exp > 0)
-            {
-                Team1.lvl = Sq(Team1.exp);
-            }
-            if (Team2.exp > 0)
-            {
-                Team2.lvl = Sq(Team2.exp);
-            }
-            if (Team3.exp > 0)
-            {
-                Team3.lvl = Sq(Team3.exp);
-            }
-            if (Team4.exp > 0)
-            {
-                Team4.lvl = Sq(Team4.exp);
-            }
 
 
+
+            Team save = new Team(Team1.name, Team1.health, Team1.mana, Team1.exp, Team1.lvl, Team1.Str, Team1.att, Team1.def, Team1.firstdeath);
+            teamsave = save;
         }
+        
 
-       
+        private double sq1(double exp)
+        {
+            return Convert.ToInt32(Math.Sqrt(exp));
+        }
         private double Sq(double exp)
         {
-
-
             return Convert.ToInt32(Math.Sqrt(Math.Sqrt(exp)));
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -216,6 +441,30 @@ namespace ADGP125
         {
             Team2.Spec(Team3);
             update();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string path = @"..\Debug\saves\Teamsave";
+            Serial.ComeBack<Team>(path);
+            Team teamsave = Serial.ComeBack<Team>(path);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string path = Environment.CurrentDirectory + @"\saves\";
+            Serial.GoToBinary<Team>("Teamsave", teamsave, path);
+            MessageBox.Show("Successfully Saved.\n");
+        }
+
+        private void textBox37_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     
