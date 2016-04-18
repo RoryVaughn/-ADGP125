@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Fighter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>Team1</name>
+  <Max_health>500</Max_health>
+  <health>420</health>
+  <Max_mana>100</Max_mana>
+  <mana>60</mana>
+  <exp>0</exp>
+  <lvl>1</lvl>
+  <Str>1</Str>
+  <att>1</att>
+  <def>1</def>
+  <firstdeath>0</firstdeath>
+</Fighter>

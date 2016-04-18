@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ADGP125
 {
    
-    class Serial
+    public class Serial
     {
         public static void GoToBinary<T>(string a, T t, string path)
         {

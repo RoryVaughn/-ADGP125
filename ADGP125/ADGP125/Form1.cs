@@ -19,27 +19,13 @@ namespace ADGP125
     public partial class Form1 : Form
     {
         Serial save = new Serial();
-        private Team teamsave;
+        private Team.Fighter teamsave;
 
 
-        [Serializable]
-        class Team
+        
+        public class Team
         {
-           
-       
-            public Team()
-            {
-
-            }
-            public Team(string s_name, double s_health, int mana, double exp, double lvl, double Str, double att, double def, int firstdeath)
-            {
-                
-            }
-
-
-
-            
-
+      
             interface I_Abilites
             {
                 void Auto(Fighter defender);
@@ -48,7 +34,7 @@ namespace ADGP125
 
 
             }
-            
+            [Serializable]
             public class Fighter : I_Abilites
             {
                 public string name; //The specific name stored for this specific object.
@@ -149,6 +135,25 @@ namespace ADGP125
                     att = F_Att; //possiblity of hitting the target
                     def = F_Def;
                 }
+
+                public Fighter(string name, int max_health, double health, int max_mana, int mana, double exp, double lvl, double str, double att, double def, int firstdeath)
+                {
+                    this.name = name;
+                    Max_health = max_health;
+                    this.health = health;
+                    Max_mana = max_mana;
+                    this.mana = mana;
+                    this.exp = exp;
+                    this.lvl = lvl;
+                    Str = str;
+                    this.att = att;
+                    this.def = def;
+                    this.firstdeath = firstdeath;
+                }
+                 private Fighter ()
+                {
+
+                }
             }
 
 
@@ -157,6 +162,20 @@ namespace ADGP125
         Team.Fighter Team2;
         Team.Fighter Team3;
         Team.Fighter Team4;
+
+        private Team.Fighter Teamsave
+        {
+            get
+            {
+                return teamsave;
+            }
+
+            set
+            {
+                teamsave = value;
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -360,8 +379,9 @@ namespace ADGP125
 
 
 
-            Team save = new Team(Team1.name, Team1.health, Team1.mana, Team1.exp, Team1.lvl, Team1.Str, Team1.att, Team1.def, Team1.firstdeath);
-            teamsave = save;
+            Team.Fighter save = new Team.Fighter(Team1.name, Team1.Max_health, Team1.health, Team1.Max_mana, Team1.mana, Team1.exp, Team1.lvl, Team1.Str, Team1.att, Team1.def, Team1.firstdeath);
+                                        //string F_Name, int F_Max_Health, int F_Health, int F_Max_Mana, int F_Mana, double F_Exp, int F_Level, double F_Str, double F_Att, double F_Def
+            Teamsave = save;
         }
         
 
@@ -450,15 +470,17 @@ namespace ADGP125
 
         private void button3_Click(object sender, EventArgs e)
         {
+            update();
             string path = @"..\Debug\saves\Teamsave";
-            Serial.ComeBack<Team>(path);
-            Team teamsave = Serial.ComeBack<Team>(path);
+            Serial.ComeBack<Team.Fighter>(path);
+            Team.Fighter teamsave = Serial.ComeBack<Team.Fighter>(path);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            update();
             string path = Environment.CurrentDirectory + @"\saves\";
-            Serial.GoToBinary<Team>("Teamsave", teamsave, path);
+            Serial.GoToBinary<Team.Fighter>("Teamsave", Teamsave, path);
             MessageBox.Show("Successfully Saved.\n");
         }
 

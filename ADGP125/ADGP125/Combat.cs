@@ -9,7 +9,7 @@ namespace ADGP125
     
     public sealed class Single
     {
-
+        
     }
     
 class Combat
@@ -47,5 +47,6 @@ class Combat
             _fsm.AddTransition(COMBATSTATES.Attack, COMBATSTATES.GameOver);
             _fsm.AddTransition(COMBATSTATES.Attack, COMBATSTATES.YouWin);
         }
+        
     }
 }

@@ -8,6 +8,7 @@ public class FSM<T>
 
     
     List<T> States;
+    
 
     List<string> TransitionsList = new List<string>(); //list of all possible state transitions for a certain object
 
