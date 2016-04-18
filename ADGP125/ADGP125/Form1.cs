@@ -150,7 +150,7 @@ namespace ADGP125
                     this.def = def;
                     this.firstdeath = firstdeath;
                 }
-                 private Fighter ()
+                 public Fighter ()
                 {
 
                 }
@@ -163,7 +163,7 @@ namespace ADGP125
         Team.Fighter Team3;
         Team.Fighter Team4;
 
-        private Team.Fighter Teamsave
+        public Team.Fighter Teamsave
         {
             get
             {
@@ -179,6 +179,7 @@ namespace ADGP125
         public Form1()
         {
             InitializeComponent();
+            
             double e_exp = 0; 
             Team1 = new Team.Fighter("Team1", 500, 500, 100, 100, 0, 1, 1, 1, 1);
             Team2 = new Team.Fighter("Team2", 500, 500, 100, 100, 0, 1, 1, 1, 1);
@@ -471,9 +472,11 @@ namespace ADGP125
         private void button3_Click(object sender, EventArgs e)
         {
             update();
-            string path = @"..\Debug\saves\Teamsave";
+            string path = Environment.CurrentDirectory + @"\saves\Teamsave";
             Serial.ComeBack<Team.Fighter>(path);
-            Team.Fighter teamsave = Serial.ComeBack<Team.Fighter>(path);
+            Team.Fighter save = Serial.ComeBack<Team.Fighter>(path);
+            update();
+            MessageBox.Show("Loaded.\n");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -481,7 +484,7 @@ namespace ADGP125
             update();
             string path = Environment.CurrentDirectory + @"\saves\";
             Serial.GoToBinary<Team.Fighter>("Teamsave", Teamsave, path);
-            MessageBox.Show("Successfully Saved.\n");
+            MessageBox.Show("Saved.\n");
         }
 
         private void textBox37_TextChanged(object sender, EventArgs e)
