@@ -2,9 +2,9 @@
 <Fighter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <name>Team1</name>
   <Max_health>500</Max_health>
-  <health>480</health>
+  <health>500</health>
   <Max_mana>100</Max_mana>
-  <mana>90</mana>
+  <mana>100</mana>
   <exp>0</exp>
   <lvl>1</lvl>
   <Str>1</Str>

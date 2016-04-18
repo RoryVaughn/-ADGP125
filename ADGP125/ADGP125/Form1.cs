@@ -233,7 +233,11 @@ namespace ADGP125
             textBox27.Text = "Attack: " + Team4.att;
             textBox26.Text = "Defence: " + Team4.def;
             //////////////////////////////////////////
-            
+                        
+Team.Fighter save = new Team.Fighter(Team1.name, Team1.Max_health, Team1.health, Team1.Max_mana, Team1.mana, Team1.exp, Team1.lvl, Team1.Str, Team1.att, Team1.def, Team1.firstdeath);
+                                        //string F_Name, int F_Max_Health, int F_Health, int F_Max_Mana, int F_Mana, double F_Exp, int F_Level, double F_Str, double F_Att, double F_Def
+            Teamsave = save;
+
         }
 
         public void update()
@@ -379,10 +383,6 @@ namespace ADGP125
             //////////////////////////////////////////
 
 
-
-            Team.Fighter save = new Team.Fighter(Team1.name, Team1.Max_health, Team1.health, Team1.Max_mana, Team1.mana, Team1.exp, Team1.lvl, Team1.Str, Team1.att, Team1.def, Team1.firstdeath);
-                                        //string F_Name, int F_Max_Health, int F_Health, int F_Max_Mana, int F_Mana, double F_Exp, int F_Level, double F_Str, double F_Att, double F_Def
-            Teamsave = save;
         }
         
 
@@ -474,8 +474,8 @@ namespace ADGP125
             update();
             string path = Environment.CurrentDirectory + @"\saves\Teamsave";
             Serial.ComeBack<Team.Fighter>(path);
-            Team.Fighter save = Serial.ComeBack<Team.Fighter>(path);
-            update();
+            Team.Fighter Teamsave = Serial.ComeBack<Team.Fighter>(path);
+            
             MessageBox.Show("Loaded.\n");
         }
 
