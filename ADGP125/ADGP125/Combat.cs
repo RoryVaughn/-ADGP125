@@ -27,9 +27,11 @@ public class Combat
 
         FSM<COMBATSTATES> _fsm;
 
-        Combat()
+        public Combat()
         {
+            
             _fsm = new FSM<COMBATSTATES>();
+           GenerateFSM();
         }
 
         void GenerateFSM()

@@ -188,7 +188,7 @@ namespace ADGP125
             Team4 = new Team.Fighter("Team4", 500, 500, 100, 100, e_exp, 1, 1, 1, 1);
             instance = new Combat();
 
-
+            instance.startFSM();
 
             ///////////////////////////////
             //attacks
