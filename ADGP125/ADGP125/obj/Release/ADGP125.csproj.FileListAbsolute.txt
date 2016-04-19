@@ -6,3 +6,4 @@ C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Release\ADGP125.Proper
 C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Release\ADGP125.csproj.GenerateResource.Cache
 C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Release\ADGP125.exe
 C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Release\ADGP125.pdb
+C:\Users\Rory.Vaughn\Desktop\-ADGP125\ADGP125\ADGP125\obj\Release\ADGP125.csprojResolveAssemblyReference.cache

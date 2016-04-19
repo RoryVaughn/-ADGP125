@@ -323,6 +323,7 @@ Team.Fighter save = new Team.Fighter(Team1.name, Team1.Max_health, Team1.health,
             {idk++;
                 Team1.health = 0;
                 instance.gameover();
+                
                 textBox1.Text = "Dead";
                 textBox37.Text = "One player is Dead";
                 
