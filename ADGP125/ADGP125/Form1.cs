@@ -163,6 +163,22 @@ namespace ADGP125
         Team.Fighter Team3;
         Team.Fighter Team4;
         Combat instance;
+
+        public class Singleton
+        {
+            private static Singleton instance = null;
+            protected Singleton()
+            {
+            }
+            public static Singleton getInstance()
+            {
+                if (instance == null)
+                {
+                    instance = new Singleton();
+                }
+                return instance;
+            }
+        }
         public Team.Fighter Teamsave
         {
             get
