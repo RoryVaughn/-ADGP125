@@ -25,7 +25,7 @@ namespace ADGP125
         
         public class Team
         {
-      
+            
             interface I_Abilites
             {
                 void Auto(Fighter defender);
@@ -162,7 +162,7 @@ namespace ADGP125
         Team.Fighter Team2;
         Team.Fighter Team3;
         Team.Fighter Team4;
-
+        Combat instance;
         public Team.Fighter Teamsave
         {
             get
@@ -179,13 +179,16 @@ namespace ADGP125
         public Form1()
         {
             InitializeComponent();
+
             
             double e_exp = 0; 
             Team1 = new Team.Fighter("Team1", 500, 500, 100, 100, 0, 1, 1, 1, 1);
             Team2 = new Team.Fighter("Team2", 500, 500, 100, 100, 0, 1, 1, 1, 1);
             Team3 = new Team.Fighter("Team3", 500, 500, 100, 100, e_exp, 1, 1, 1, 1);
             Team4 = new Team.Fighter("Team4", 500, 500, 100, 100, e_exp, 1, 1, 1, 1);
-        
+            instance = new Combat();
+
+
 
             ///////////////////////////////
             //attacks
@@ -242,6 +245,8 @@ Team.Fighter save = new Team.Fighter(Team1.name, Team1.Max_health, Team1.health,
 
         public void update()
         {
+            
+            
             if (Team1.exp > 0)
             {
                 Team1.lvl = Sq(Team1.exp);
@@ -319,6 +324,8 @@ Team.Fighter save = new Team.Fighter(Team1.name, Team1.Max_health, Team1.health,
                 Team1.health = 0;
                 textBox1.Text = "Dead";
                 textBox37.Text = "One player is Dead";
+                instance.gameover();
+                
                 
 
             }
@@ -327,7 +334,14 @@ Team.Fighter save = new Team.Fighter(Team1.name, Team1.Max_health, Team1.health,
                 Team2.health = 0;
                 textBox24.Text = "Dead";
                 textBox37.Text = "One player is Dead";
-                
+                instance.gameover();
+
+
+            }
+            if (Team1.lvl > 10)
+            {
+                textBox37.Text = "You Win";
+                instance.win();
             }
             if (idk == 2)
             {
@@ -474,8 +488,8 @@ Team.Fighter save = new Team.Fighter(Team1.name, Team1.Max_health, Team1.health,
             update();
             string path = Environment.CurrentDirectory + @"\saves\Teamsave";
             Serial.ComeBack<Team.Fighter>(path);
-            Team.Fighter Teamsave = Serial.ComeBack<Team.Fighter>(path);
-            
+            Team1 = Serial.ComeBack<Team.Fighter>(path);
+            update();
             MessageBox.Show("Loaded.\n");
         }
 
@@ -483,7 +497,7 @@ Team.Fighter save = new Team.Fighter(Team1.name, Team1.Max_health, Team1.health,
         {
             update();
             string path = Environment.CurrentDirectory + @"\saves\";
-            Serial.GoToBinary<Team.Fighter>("Teamsave", Teamsave, path);
+            Serial.GoToBinary<Team.Fighter>("Teamsave", Team1, path);
             MessageBox.Show("Saved.\n");
         }
 

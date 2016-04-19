@@ -12,7 +12,7 @@ namespace ADGP125
         
     }
     
-class Combat
+public class Combat
     {
        
 
@@ -22,7 +22,6 @@ class Combat
             Attack,
             GameOver,
             YouWin,
-            
             count
         }
 
@@ -47,6 +46,19 @@ class Combat
             _fsm.AddTransition(COMBATSTATES.Attack, COMBATSTATES.GameOver);
             _fsm.AddTransition(COMBATSTATES.Attack, COMBATSTATES.YouWin);
         }
-        
+        public void startFSM()
+        {
+            _fsm.Transition(_fsm.state, COMBATSTATES.Attack);
+            
+        }
+        public void gameover()
+        {
+            _fsm.Transition(_fsm.state, COMBATSTATES.GameOver);
+        }
+        public void win()
+        {
+            _fsm.Transition(_fsm.state, COMBATSTATES.YouWin);
+        }
+
     }
 }
