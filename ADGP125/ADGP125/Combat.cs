@@ -56,6 +56,7 @@ public class Combat
         public void gameover()
         {
             _fsm.Transition(_fsm.state, COMBATSTATES.GameOver);
+
         }
         public void win()
         {
